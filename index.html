@@ -1,0 +1,226 @@
+<!DOCTYPE HTML>
+<!--
+	Multiverse by HTML5 UP
+	html5up.net | @ajlkn
+	Free for personal and commercial use under the CCA 3.0 license (html5up.net/license)
+-->
+<html>
+	<head>
+		<title>FOODMAP</title>
+		<link rel="icon" type="image/png" href="images/icono.png"/>
+		<meta charset="utf-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+		<link rel="stylesheet" href="assets/css/map.css" />
+		<link rel="stylesheet" href="assets/css/main.css" />
+		
+		<noscript><link rel="stylesheet" href="assets/css/noscript.css" /></noscript>
+		<style>
+			/* Always set the map height explicitly to define the size of the div
+			 * element that contains the map. */
+			#map {
+			  height: 300px;
+			}
+			/* Optional: Makes the sample page fill the window. */
+			html, body {
+			  height: 100%;
+			  margin: 0;
+			  padding: 0;
+			}
+		  </style>
+	</head>
+	<body class="is-preload">
+
+		<!-- Wrapper -->
+			<div id="wrapper">
+
+				<!-- Header -->
+					<header id="header">
+						<h1><a href="index.html"><strong>FOODMAP</strong> COMIDA A TU ALCANCE </a></h1>
+						<nav>
+							<ul>
+								<li><a href="#footer" class="icon fa-info-circle">BUSCA</a></li>
+							</ul>
+						</nav>
+					</header>
+
+				<!-- Main -->
+					<div id="main">
+						<div id="map"></div>
+						
+						  
+					  
+						  <div id="listing">
+							<table id="resultsTable">
+							  <tbody id="results"></tbody>
+							</table>
+						  </div>
+					  
+						  <div style="display: none">
+							<div id="info-content">
+							  <table>
+								<tr id="iw-url-row" class="iw_table_row">
+								  <td id="iw-icon" class="iw_table_icon"></td>
+								  <td id="iw-url"></td>
+								</tr>
+								<tr id="iw-address-row" class="iw_table_row">
+								  <td class="iw_attribute_name">Address:</td>
+								  <td id="iw-address"></td>
+								</tr>
+								<tr id="iw-phone-row" class="iw_table_row">
+								  <td class="iw_attribute_name">Telephone:</td>
+								  <td id="iw-phone"></td>
+								</tr>
+								<tr id="iw-rating-row" class="iw_table_row">
+								  <td class="iw_attribute_name">Rating:</td>
+								  <td id="iw-rating"></td>
+								</tr>
+								<tr id="iw-website-row" class="iw_table_row">
+								  <td class="iw_attribute_name">Website:</td>
+								  <td id="iw-website"></td>
+								</tr>
+							  </table>
+							</div>
+						  </div>
+					<article> </article>
+						<article class="thumb">
+							<div id="findFood">
+								Encuentra Restaurantes en:
+							  </div>
+						  
+							  <div id="locationField">
+								<input id="autocomplete" placeholder="Ingresa una ciudad" type="text" />
+							  </div>
+						  
+							  <div id="controls">
+								<select id="country">
+								  <option value="all" selected>A nivel mundial</option>
+								  <option value="au">Australia</option>
+								  <option value="br">Brazil</option>
+								  <option value="ca">Canada</option>
+								  <option value="fr">Francia</option>
+								  <option value="de">Alemania</option>
+								  <option value="mx">Mexico</option>
+								  <option value="nz">Nueva Zealanda</option>
+								  <option value="it">Italia</option>
+								  <option value="za">Sudafrica</option>
+								  <option value="es">España</option>
+								  <option value="pt">Portugal</option>
+								  <option value="us" >U.S.A.</option>
+								  <option value="uk">United Kingdom</option>
+								</select>
+							  </div>
+						</article>
+						<article class="thumb">
+							<a href="images/fulls/02.jpg" class="image"><img src="images/thumbs/02.jpg" alt="" /></a>
+							<h2>Nisl adipiscing</h2>
+							<p>Nunc blandit nisi ligula magna sodales lectus elementum non. Integer id venenatis velit.</p>
+						</article>
+						<article class="thumb">
+							<a href="images/fulls/03.jpg" class="image"><img src="images/thumbs/03.jpg" alt="" /></a>
+							<h2>Tempus aliquam veroeros</h2>
+							<p>Nunc blandit nisi ligula magna sodales lectus elementum non. Integer id venenatis velit.</p>
+						</article>
+						<article class="thumb">
+							<a href="images/fulls/04.jpg" class="image"><img src="images/thumbs/04.jpg" alt="" /></a>
+							<h2>Aliquam ipsum sed dolore</h2>
+							<p>Nunc blandit nisi ligula magna sodales lectus elementum non. Integer id venenatis velit.</p>
+						</article>
+						<article class="thumb">
+							<a href="images/fulls/05.jpg" class="image"><img src="images/thumbs/05.jpg" alt="" /></a>
+							<h2>Cursis aliquam nisl</h2>
+							<p>Nunc blandit nisi ligula magna sodales lectus elementum non. Integer id venenatis velit.</p>
+						</article>
+						<article class="thumb">
+							<a href="images/fulls/06.jpg" class="image"><img src="images/thumbs/06.jpg" alt="" /></a>
+							<h2>Sed consequat phasellus</h2>
+							<p>Nunc blandit nisi ligula magna sodales lectus elementum non. Integer id venenatis velit.</p>
+						</article>
+						<article class="thumb">
+							<a href="images/fulls/07.jpg" class="image"><img src="images/thumbs/07.jpg" alt="" /></a>
+							<h2>Mauris id tellus arcu</h2>
+							<p>Nunc blandit nisi ligula magna sodales lectus elementum non. Integer id venenatis velit.</p>
+						</article>
+						<article class="thumb">
+							<a href="images/fulls/08.jpg" class="image"><img src="images/thumbs/08.jpg" alt="" /></a>
+							<h2>Nunc vehicula id nulla</h2>
+							<p>Nunc blandit nisi ligula magna sodales lectus elementum non. Integer id venenatis velit.</p>
+						</article>
+						<article class="thumb">
+							<a href="images/fulls/09.jpg" class="image"><img src="images/thumbs/09.jpg" alt="" /></a>
+							<h2>Neque et faucibus viverra</h2>
+							<p>Nunc blandit nisi ligula magna sodales lectus elementum non. Integer id venenatis velit.</p>
+						</article>
+						<article class="thumb">
+							<a href="images/fulls/10.jpg" class="image"><img src="images/thumbs/10.jpg" alt="" /></a>
+							<h2>Mattis ante fermentum</h2>
+							<p>Nunc blandit nisi ligula magna sodales lectus elementum non. Integer id venenatis velit.</p>
+						</article>
+						<article class="thumb">
+							<a href="images/fulls/11.jpg" class="image"><img src="images/thumbs/11.jpg" alt="" /></a>
+							<h2>Sed ac elementum arcu</h2>
+							<p>Nunc blandit nisi ligula magna sodales lectus elementum non. Integer id venenatis velit.</p>
+						</article>
+						<article class="thumb">
+							<a href="images/fulls/12.jpg" class="image"><img src="images/thumbs/12.jpg" alt="" /></a>
+							<h2>Vehicula id nulla dignissim</h2>
+							<p>Nunc blandit nisi ligula magna sodales lectus elementum non. Integer id venenatis velit.</p>
+						</article>
+						
+					</div>
+
+				<!-- Footer -->
+					<footer id="footer" class="panel">
+						<div class="inner split">
+							<div>
+								<section>
+									<h2>Acerca del proyecto</h2>
+									<p>Se busca a traves de este proyecto mostrar al usuario restaruantes cerca ,solo con un click.</p>
+								</section>
+								<section>
+									<h2>Sigueme en  ...</h2>
+									<ul class="icons">
+										<li><a href="#" class="icon fa-twitter"><span class="label">Twitter</span></a></li>
+										<li><a href="#" class="icon fa-facebook"><span class="label">Facebook</span></a></li>
+										<li><a href="#" class="icon fa-instagram"><span class="label">Instagram</span></a></li>
+										<li><a href="https://github.com/yenifergalarza" class="icon fa-github"><span class="label">GitHub</span></a></li>
+										<li><a href="#" class="icon fa-dribbble"><span class="label">Dribbble</span></a></li>
+										<li><a href="https://www.linkedin.com/in/yenifer-alexandra-galarza-pezo-453268140/" class="icon fa-linkedin"><span class="label">LinkedIn</span></a></li>
+									</ul>
+								</section>
+								<p class="copyright">
+									&copy; Unttled. Design: <a href="http://html5up.net">HTML5 UP</a>.
+								</p>
+							</div>
+							<div>
+								<section>
+									<h2>Busca un restaruante</h2>
+						
+										
+										  <ul class="actions">
+										
+											<li><input type="reset" value="Reset" /></li>
+										</ul>
+									
+								</section>
+							
+						</div>
+					</footer>
+
+			</div>
+
+		<!-- Scripts -->
+		<script async defer
+		src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBN7g2B4cJM8YhPOtehI7Wl3w5rLaYktgg&callback=initMap">
+		</script>
+		 <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBN7g2B4cJM8YhPOtehI7Wl3w5rLaYktgg&libraries=places&callback=initMap"
+		 async defer></script>
+			<script src="assets/js/map.js"></script>
+			<script src="assets/js/jquery.min.js"></script>
+			<script src="assets/js/jquery.poptrox.min.js"></script>
+			<script src="assets/js/browser.min.js"></script>
+			<script src="assets/js/breakpoints.min.js"></script>
+			<script src="assets/js/util.js"></script>
+			<script src="assets/js/main.js"></script>
+
+	</body>
+</html>
