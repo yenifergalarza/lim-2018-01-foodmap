@@ -1,17 +1,21 @@
-var map, places, infoWindow;
-var markers = [];
-var autocomplete;
-var countryRestrict = {'country': 'us'};
-var MARKER_PATH = 'https://developers.google.com/maps/documentation/javascript/images/marker_green';
-var hostnameRegexp = new RegExp('^https?://.+?/');
+let map, places, infoWindow;
+let markers = [];
+let autocomplete;
+const countryRestrict = {'country': 'pe'};
+const MARKER_PATH = 'https://developers.google.com/maps/documentation/javascript/images/marker_green';
+let hostnameRegexp = new RegExp('^https?://.+?/');
 
-var countries = {
+const countries = {
   'au': {
     center: {lat: -25.3, lng: 133.8},
     zoom: 4
   },
   'br': {
     center: {lat: -14.2, lng: -51.9},
+    zoom: 3
+  },
+  'pe': {
+    center: {lat: -9.1, lng: -75.0},
     zoom: 3
   },
   'ca': {
@@ -74,8 +78,8 @@ function initMap() {
     content: document.getElementById('info-content')
   });
 
-  // Create the autocomplete object and associate it with the UI input control.
-  // Restrict the search to the default country, and to place type "cities".
+  //crea el objeto de autocompletado associate it with the UI input control.
+  // restringe la busqueda al pais por default, y añade un lugar de tipo "cities.
   autocomplete = new google.maps.places.Autocomplete(
       /** @type {!HTMLInputElement} */ (
           document.getElementById('autocomplete')), {
@@ -86,13 +90,13 @@ function initMap() {
 
   autocomplete.addListener('place_changed', onPlaceChanged);
 
-  // Add a DOM event listener to react when the user selects a country.
+  // añade el listener del dom cuando un usuario seleciona una ciudad.
   document.getElementById('country').addEventListener(
       'change', setAutocompleteCountry);
 }
 
-// When the user selects a city, get the place details for the city and
-// zoom the map in on the city.
+//cuando el usuario seleciona la ciudad, consigue los detalles del lugar
+// y hace zoom
 function onPlaceChanged() {
   var place = autocomplete.getPlace();
   if (place.geometry) {
@@ -104,7 +108,7 @@ function onPlaceChanged() {
   }
 }
 
-// Search for hotels in the selected city, within the viewport of the map.
+// busca los restaurantes en el mapa.
 function search() {
   var search = {
     bounds: map.getBounds(),
@@ -115,19 +119,19 @@ function search() {
     if (status === google.maps.places.PlacesServiceStatus.OK) {
       clearResults();
       clearMarkers();
-      // Create a marker for each hotel found, and
-      // assign a letter of the alphabetic to each marker icon.
+      // Crea un mapa por cada restaurante
+      // asigna una letra para cada marker
       for (var i = 0; i < results.length; i++) {
         var markerLetter = String.fromCharCode('A'.charCodeAt(0) + (i % 26));
         var markerIcon = MARKER_PATH + markerLetter + '.png';
-        // Use marker animation to drop the icons incrementally on the map.
+        // Usa los markers para que aparezcan iincrementadose en el mapa
         markers[i] = new google.maps.Marker({
           position: results[i].geometry.location,
           animation: google.maps.Animation.DROP,
           icon: markerIcon
         });
-        // If the user clicks a hotel marker, show the details of that hotel
-        // in an info window.
+        // si el usuario hace click en el marker muestra la info del restaurante
+        // en infowindow.
         markers[i].placeResult = results[i];
         google.maps.event.addListener(markers[i], 'click', showInfoWindow);
         setTimeout(dropMarker(i), i * 100);
@@ -146,8 +150,8 @@ function clearMarkers() {
   markers = [];
 }
 
-// Set the country restriction based on user input.
-// Also center and zoom the map on the given country.
+// configura la restriccion del pis usando el input
+// ademas centra y hace zoom
 function setAutocompleteCountry() {
   var country = document.getElementById('country').value;
   if (country == 'all') {
@@ -201,8 +205,8 @@ function clearResults() {
   }
 }
 
-// Get the place details for a hotel. Show the information in an info window,
-// anchored on the marker for the hotel that the user selected.
+// consigue los detalles del hotel.muestra la informacion en infoWindow,
+// ancla la info del restaurante con el marker
 function showInfoWindow() {
   var marker = this;
   places.getDetails({placeId: marker.placeResult.place_id},
@@ -214,8 +218,7 @@ function showInfoWindow() {
         buildIWContent(place);
       });
 }
-
-// Load the place information into the HTML elements used by the info window.
+//carga el lugar de informacion en los elementos de htlm usando la funcion info window
 function buildIWContent(place) {
   document.getElementById('iw-icon').innerHTML = '<img class="hotelIcon" ' +
       'src="' + place.icon + '"/>';
@@ -231,9 +234,9 @@ function buildIWContent(place) {
     document.getElementById('iw-phone-row').style.display = 'none';
   }
 
-  // Assign a five-star rating to the hotel, using a black star ('&#10029;')
-  // to indicate the rating the hotel has earned, and a white star ('&#10025;')
-  // for the rating points not achieved.
+  // Asigna las estrellas (negra) ('&#10029;')
+  // Asigna las estrellas (blanca)('&#10025;')
+  
   if (place.rating) {
     var ratingHtml = '';
     for (var i = 0; i < 5; i++) {
@@ -249,8 +252,7 @@ function buildIWContent(place) {
     document.getElementById('iw-rating-row').style.display = 'none';
   }
 
-  // The regexp isolates the first part of the URL (domain plus subdomain)
-  // to give a short URL for displaying in the info window.
+  // asigna el url del restaurante
   if (place.website) {
     var fullUrl = place.website;
     var website = hostnameRegexp.exec(place.website);
