@@ -19,13 +19,13 @@
         height: 470px;
         overflow: auto;
         left: 0px;
-        bottom: 10px;
-        top: 0%;
+   
+     
         cursor: pointer;
         overflow-x: hidden;
       }
       #findFood{
-        bottom: 10px;
+        
         position: absolute;
         text-align: right;
         width: 100px;
@@ -35,12 +35,12 @@
         background-color: #fff;
       }
       #locationField {
-        bottom: 10px;
+       
         position: absolute;
         width: 190px;
         height: 25px;
         left: 108px;
-        top: 90%;
+        top: 0%;
         z-index: 5;
         background-color: #fff;
       }
@@ -48,17 +48,18 @@
         position: absolute;
         left: 300px;
         width: 140px;
-        top: 90%;
+        
         z-index: 5;
         background-color: #fff;
-        bottom: 10px;
+       
       }
       #autocomplete {
         width: 100%;
+        z-index: 10;
       }
       #country {
         width: 100%;
-        bottom: 10px;
+        bottom: 0px;
       }
       .placeIcon {
         width: 20px;
@@ -86,4 +87,63 @@
       }
       .iw_table_icon {
         text-align: right;
+      }
+      
+      @media(min-width:320px){
+        #autocomplete {
+          margin-top: 166%;
+          margin-left: -34%;
+          width: 100%;
+          z-index: 10;
+      }
+        #controls {
+        margin-top: -21%;
+        position: absolute;
+        left: 70%;
+        width: 140px;
+        z-index: 5;
+        background-color: #fff;
+    }#findFood {
+     
+      display: none;
+  }
+  #locationField {
+    background-color: #09090900;
+}
+}
+      
+      @media(min-width:730px){
+        #findFood {
+          position: absolute;
+          text-align: right;
+          width: 100px;
+          font-size: 14px;
+          padding: 4px;
+          z-index: 5;
+          background-color: #fff;
+      }
+      #autocomplete {
+        width: 100%;
+        z-index: 10;
+        margin-left: 271%;
+        margin-top: 11px;
+    }
+    #locationField {
+      width: 100px;
+      z-index: 1;
+      margin-left: 37%;
+      margin-top: 118px;
+      background: #3c3c3d00;
+  }
+
+  #controls {
+    bottom: -116%;
+    position: absolute;
+    left: 421%;
+    width: 140px;
+    z-index: 5;
+    background-color: #fff;
+}
+
+
       }

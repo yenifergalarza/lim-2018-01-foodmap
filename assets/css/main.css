@@ -1050,6 +1050,7 @@ input, select, {
 	}
 
 		.panel.active {
+			z-index:1 ;
 			-moz-transform: translateY(1px);
 			-webkit-transform: translateY(1px);
 			-ms-transform: translateY(1px);
